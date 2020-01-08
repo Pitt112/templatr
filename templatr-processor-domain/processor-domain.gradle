@@ -1,0 +1,7 @@
+sourceCompatibility = 1.8
+description = "Templatr Processor Domain Models"
+
+dependencies {
+    api 'org.antlr:antlr4:4.7.1'
+    implementation 'com.google.guava:guava:28.0-jre'
+}

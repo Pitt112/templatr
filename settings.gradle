@@ -8,3 +8,13 @@
  */
 
 rootProject.name = 'templatr'
+
+include 'templatr-processor-api'
+include 'templatr-processor-domain'
+include 'templatr-processor-v7'
+include 'templatr-processor-v8'
+include 'templatr-processor-v9'
+
+rootProject.children.each { project ->
+    project.buildFileName = "${project.name}.gradle" - "templatr-"
+}

@@ -1,0 +1,25 @@
+plugins {
+    id 'antlr'
+}
+
+sourceCompatibility = 1.8
+description = "Templatr Processor V9"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api project(":templatr-processor-api")
+    api project(":templatr-processor-domain")
+    antlr 'org.antlr:antlr4:4.7.1' // use ANTLR version 4
+    implementation 'org.antlr:antlr4:4.7.1' // use ANTLR version 4
+    implementation 'com.google.guava:guava:28.0-jre'
+
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+}
+
+generateGrammarSource {
+    arguments += ["-visitor", "-package", "io.templatr.processor.v8.parser"]
+}
